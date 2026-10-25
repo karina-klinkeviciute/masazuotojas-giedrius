@@ -60,6 +60,10 @@
   --accent-hover: #123c37;
   --on-accent: #ffffff;
   --fig: #ddd1c2;
+  --stone-1: #163a35;
+  --stone-2: #2c5c55;
+  --stone-3: #c9b79f;
+  --leaf: rgb(143 181 165 / 0.55);
   --border: #e0d5c7;
   --focus: #b3410e;
   --shadow: 0 1px 2px rgb(60 40 20 / 0.06), 0 8px 24px rgb(60 40 20 / 0.08);
@@ -73,6 +77,10 @@
   --gold-hover: #f3dcb9;
   --on-gold: #142c28;
   --focus-on-deep: #ffd27a;
+
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --wave: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0 0h1440v38c-160 34-330 52-520 44C700 72 560 30 380 30 230 30 110 52 0 74z'/%3E%3C/svg%3E");
+  --wave-h: clamp(2.5rem, 6vw, 5.5rem);
 
   --serif: "Fraunces", Georgia, "Times New Roman", serif;
   --sans: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -94,6 +102,10 @@
     --accent-hover: #b3e4db;
     --on-accent: #10201d;
     --fig: #4a433d;
+    --stone-1: #2a4f49;
+    --stone-2: #3d6f67;
+    --stone-3: #a8977f;
+    --leaf: rgb(143 211 199 / 0.25);
     --border: #3a3530;
     --focus: #ffb38a;
     --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 24px rgb(0 0 0 / 0.3);
@@ -180,6 +192,16 @@ main:focus { outline: none; }
   color: var(--gold);
 }
 .eyebrow-dark { color: var(--accent); }
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 2.25rem;
+  height: 2px;
+  margin-right: 0.8rem;
+  vertical-align: 0.3em;
+  background: currentColor;
+  opacity: 0.7;
+}
 
 /* ===== Mygtukai ===== */
 .button {
@@ -274,7 +296,9 @@ main:focus { outline: none; }
   isolation: isolate;
   color: var(--on-deep);
   background:
+    var(--grain),
     radial-gradient(ellipse 60% 70% at 85% 30%, rgb(232 199 154 / 0.12), transparent 70%),
+    radial-gradient(ellipse 50% 60% at 10% 90%, rgb(143 211 199 / 0.08), transparent 70%),
     linear-gradient(160deg, var(--deep), var(--deep-2));
 }
 .hero a:not(.button), .contact a:not(.button) { color: var(--gold); }
@@ -323,6 +347,36 @@ main:focus { outline: none; }
   font-size: 1.1rem;
 }
 .hero-facts strong { color: var(--on-deep); margin-right: 0.35rem; }
+
+/* ===== Banguoti perėjimai tarp skilčių =====
+   Banga nupiešiama ankstesnės / kitos skilties spalva. */
+.wave-top, .wave-bottom { position: relative; }
+.wave-top::before, .wave-bottom::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  height: var(--wave-h);
+  pointer-events: none;
+  -webkit-mask: var(--wave) center / 100% 100% no-repeat;
+  mask: var(--wave) center / 100% 100% no-repeat;
+}
+.wave-top::before { top: -1px; background: var(--wave-top, var(--bg)); }
+.wave-bottom::after { bottom: -1px; background: var(--wave-bottom, var(--bg)); transform: scale(-1, -1); }
+.wave-top { padding-top: calc(4.5rem + var(--wave-h)); }
+.wave-bottom { padding-bottom: calc(4.5rem + var(--wave-h)); }
+#svarbu { --wave-top: var(--bg); }
+.contact { --wave-top: var(--bg-alt); --wave-bottom: var(--bg); }
+
+/* Akmenų iliustracija */
+.stones { display: block; width: min(15rem, 60%); margin: 1.5rem 0 0; }
+.stones .shadow { fill: var(--accent); opacity: 0.1; }
+.stones .st1 { fill: var(--stone-1); }
+.stones .st2 { fill: var(--stone-2); }
+.stones .st3 { fill: var(--stone-3); }
+.stones .st4, .stones .drop { fill: var(--gold); }
+.stones .hi { fill: none; stroke: #fff; stroke-opacity: 0.35; stroke-width: 2.5; stroke-linecap: round; }
+.stones .sprig { fill: var(--leaf); stroke: var(--accent); stroke-width: 1.5; }
+.stones .stem { fill: none; stroke-width: 2; }
 
 /* ===== Skiltys ===== */
 .section { padding: 4.5rem 0; }
@@ -482,7 +536,7 @@ main:focus { outline: none; }
 .note p:last-child { margin: 0; }
 
 /* ===== Kontaktai ===== */
-.contact { padding: 5rem 0; }
+.contact { padding: calc(4.5rem + var(--wave-h)) 0; }
 .contact-art {
   position: absolute;
   z-index: -1;
@@ -554,12 +608,20 @@ main:focus { outline: none; }
   .card:hover { transform: translateY(-4px); }
   .button:hover { transform: translateY(-1px); }
 }
+/* „backwards“ – po animacijos elementas grįžta į įprastą būseną (veikia ir hover efektai) */
+.reveal-on [data-reveal]:not(.is-visible) { opacity: 0; }
+.reveal-on .is-visible { animation: rise 1s cubic-bezier(0.2, 0.7, 0.2, 1) backwards; }
+.reveal-on .card.is-visible:nth-child(3n + 2),
+.reveal-on .price.is-visible:nth-child(2),
+.reveal-on .note.is-visible { animation-delay: 0.12s; }
+.reveal-on .card.is-visible:nth-child(3n) { animation-delay: 0.24s; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .button { transition: none; }
 }
 @keyframes rise {
-  from { opacity: 0; transform: translateY(16px); }
+  from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: none; }
 }
 @keyframes drift {
@@ -576,10 +638,14 @@ main:focus { outline: none; }
   .hero { padding: 7rem 0 6rem; }
   .hero-art { width: 52rem; right: -14rem; opacity: 0.55; }
   .section { padding: 6rem 0; }
+  .wave-top { padding-top: calc(6rem + var(--wave-h)); }
+  .wave-bottom { padding-bottom: calc(6rem + var(--wave-h)); }
+  .hero.wave-bottom { padding-bottom: calc(6rem + var(--wave-h)); }
+  .stones { width: min(18rem, 80%); margin-top: 2.5rem; }
   .about { grid-template-columns: 1fr 1.4fr; }
   .features { grid-column: 1 / -1; }
   .prep { grid-template-columns: 1.2fr 1fr; }
-  .contact { padding: 7rem 0; }
+  .contact { padding: calc(6rem + var(--wave-h)) 0; }
   .contact-list { grid-template-columns: repeat(3, 1fr); }
 }
 
@@ -595,5 +661,5 @@ main:focus { outline: none; }
 @media (forced-colors: active) {
   .button { border: 2px solid ButtonText; }
   .figure .hl { fill: Highlight; }
-  .hero-art, .contact-art { display: none; }
+  .hero-art, .contact-art, .wave-top::before, .wave-bottom::after { display: none; }
 }
