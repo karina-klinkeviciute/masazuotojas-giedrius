@@ -380,14 +380,6 @@ main:focus { outline: none; }
 }
 .features h3 { font-size: 1.25rem; margin-bottom: 0.35em; }
 .features p { margin: 0; color: var(--text-muted); }
-.feature-num {
-  display: block;
-  font-family: var(--serif);
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--accent);
-  margin-bottom: 0.4rem;
-}
 
 /* Masažai */
 .cards {
