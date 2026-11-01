@@ -68,30 +68,31 @@
 /* ===== Spalvos ir dydžiai =====
    Visos teksto/fono poros atitinka WCAG AAA (≥ 7:1) kontrastą. */
 :root {
-  --bg: #fbfefc;
-  --bg-alt: #e9f6f2;
+  --bg: #fff4ec;
+  --bg-alt: #e6f0f9;
   --surface: #ffffff;
-  --text: #12302b;
-  --text-muted: #34504a;
-  --accent: #0b4f47;
-  --accent-hover: #083a34;
+  --text: #1b2540;
+  --text-muted: #37425e;
+  --accent: #25406f;
+  --accent-hover: #1a2f54;
   --on-accent: #ffffff;
-  --fig: #cfe3dd;
-  --fig-hl: #2f8f80;
+  --fig: #cddcea;
+  --fig-hl: #4a78ad;
   --peach: #ffc9ae;
-  --border: #cfe5de;
+  --border: #e2dfe4;
   --focus: #b3410e;
-  --shadow: 0 1px 2px rgb(11 79 71 / 0.05), 0 8px 24px rgb(11 79 71 / 0.08);
+  --shadow: 0 1px 2px rgb(27 37 64 / 0.05), 0 8px 24px rgb(27 37 64 / 0.08);
 
   /* Spalvotos juostos (viršus, kontaktai, išskirtos kortelės) */
-  --band: #cfeee5;
-  --band-2: #eefaf6;
-  --on-band: #12302b;
-  --on-band-muted: #2c4742;
-  --band-line: rgb(18 48 43 / 0.2);
+  --band: #d6e6f5;
+  --band-2: #fde8da;
+  --on-band: #1b2540;
+  --on-band-muted: #2f3a56;
+  --band-line: rgb(27 37 64 / 0.2);
+  --card-hl: #fde6d6;
   --band-badge: rgb(255 255 255 / 0.6);
-  --highlight: #0b4f47;
-  --highlight-hover: #083a34;
+  --highlight: #25406f;
+  --highlight-hover: #1a2f54;
   --glow: rgb(255 201 174 / 0.4);
 
   --wave: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0 0h1440v38c-160 34-330 52-520 44C700 72 560 30 380 30 230 30 110 52 0 74z'/%3E%3C/svg%3E");
@@ -108,27 +109,28 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #101a18;
-    --bg-alt: #15231f;
-    --surface: #1c2c28;
-    --text: #eef8f5;
-    --text-muted: #c6d9d3;
-    --accent: #8fe0cf;
-    --accent-hover: #b8efe3;
-    --on-accent: #0b2420;
-    --fig: #3a524c;
-    --fig-hl: #8fe0cf;
-    --border: #2c423c;
+    --bg: #141a26;
+    --bg-alt: #1a2233;
+    --surface: #222c40;
+    --text: #eef2f9;
+    --text-muted: #c8d2e2;
+    --accent: #a9c8f0;
+    --accent-hover: #c9def8;
+    --on-accent: #10182a;
+    --fig: #3c4a64;
+    --fig-hl: #a9c8f0;
+    --border: #33405a;
     --focus: #ffb38a;
     --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 24px rgb(0 0 0 / 0.3);
-    --band: #17352f;
-    --band-2: #102622;
-    --on-band: #eef8f5;
-    --on-band-muted: #c6e0d9;
-    --band-line: rgb(238 248 245 / 0.2);
+    --band: #1e2c46;
+    --band-2: #2b2433;
+    --on-band: #eef2f9;
+    --on-band-muted: #c8d4e6;
+    --band-line: rgb(238 242 249 / 0.2);
+    --card-hl: #33304a;
     --band-badge: rgb(255 255 255 / 0.1);
-    --highlight: #a5e8d9;
-    --highlight-hover: #c6f2e8;
+    --highlight: #b8d2f5;
+    --highlight-hover: #d5e5fa;
     --glow: rgb(255 201 174 / 0.08);
   }
 }
@@ -466,8 +468,8 @@ main:focus { outline: none; }
   flex-wrap: wrap;
   align-items: center;
   gap: 1rem 1.75rem;
-  background: var(--band);
-  border-color: var(--band);
+  background: var(--card-hl);
+  border-color: var(--card-hl);
   color: var(--on-band);
 }
 .card-wide > div { flex: 1 1 16rem; }
