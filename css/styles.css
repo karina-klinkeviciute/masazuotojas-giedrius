@@ -460,14 +460,6 @@ main:focus { outline: none; }
   margin: 0 0 1rem;
 }
 .price-note { margin: 0; color: var(--text-muted); }
-.price-featured {
-  background: var(--band);
-  border-color: var(--band);
-  color: var(--on-band);
-}
-.price-featured .price-time,
-.price-featured .price-note { color: var(--on-band-muted); }
-.price-featured .price-sum { color: var(--highlight); }
 
 /* Prieš atvykstant */
 .prep { display: grid; gap: 2.5rem 4rem; align-items: start; }
