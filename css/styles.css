@@ -407,6 +407,18 @@ main:focus { outline: none; }
   color: var(--text);
 }
 .about-body p:not(.about-lead) { color: var(--text-muted); }
+/* Piešta iliustracija: kraštai ištirpsta į persikinį foną */
+.about-art {
+  display: block;
+  width: 100%;
+  max-width: 60rem;
+  height: auto;
+  margin: 1.5rem auto 0;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 14%, #000 86%, transparent), linear-gradient(to bottom, transparent, #000 12%, #000 86%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, transparent, #000 14%, #000 86%, transparent), linear-gradient(to bottom, transparent, #000 12%, #000 86%, transparent);
+  mask-composite: intersect;
+}
 .features {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
@@ -637,6 +649,7 @@ main:focus { outline: none; }
   .hero.wave-bottom { padding-bottom: calc(6rem + var(--wave-h)); }
   .about { grid-template-columns: 1fr 1.4fr; }
   .features { grid-column: 1 / -1; }
+  .about-art { grid-column: 1 / -1; }
   .prep { grid-template-columns: 1.2fr 1fr; }
   .contact { padding: calc(6rem + var(--wave-h)) 0; }
   .contact-list { grid-template-columns: repeat(3, 1fr); }
