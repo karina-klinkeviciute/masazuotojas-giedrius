@@ -131,34 +131,79 @@
           <p class="section-intro">Masažą galima rinktis pagal vieną kūno sritį arba derinti kelias.</p>
         </div>
 
+        <!-- Bendras kūno siluetas ikonėlėms. Švelnus švytėjimas rodo masažuojamą sritį. -->
+        <svg class="visually-hidden" aria-hidden="true" focusable="false">
+          <defs>
+            <g id="fig-body"><ellipse cx="30" cy="10" rx="7" ry="8"/><path d="M30 19C32 19 33 20 33.5 22C34 24 38 24.5 41 25.5C45 27 46.5 30 47 34C48 42 49 50 50.5 58C51 61 49.5 63 47.5 62.5C46 62 45.5 60 45 58C43.5 50 42.5 44 41 38C40.5 44 40 48 40.5 54C41 60 41 66 40 74C39.5 82 38.5 90 37.5 97C37 99.5 33 99.5 32.5 97C32 88 31.5 78 30.5 66Q30 65.5 29.5 66C28.5 78 28 88 27.5 97C27 99.5 23 99.5 22.5 97C21.5 90 20.5 82 20 74C19 66 19 60 19.5 54C20 48 19.5 44 19 38C17.5 44 16.5 50 15 58C14.5 60 14 62 12.5 62.5C10.5 63 9 61 9.5 58C11 50 12 42 13 34C13.5 30 15 27 19 25.5C22 24.5 26 24 26.5 22C27 20 28 19 30 19Z"/></g>
+            <clipPath id="fig-clip"><ellipse cx="30" cy="10" rx="7" ry="8"/><path d="M30 19C32 19 33 20 33.5 22C34 24 38 24.5 41 25.5C45 27 46.5 30 47 34C48 42 49 50 50.5 58C51 61 49.5 63 47.5 62.5C46 62 45.5 60 45 58C43.5 50 42.5 44 41 38C40.5 44 40 48 40.5 54C41 60 41 66 40 74C39.5 82 38.5 90 37.5 97C37 99.5 33 99.5 32.5 97C32 88 31.5 78 30.5 66Q30 65.5 29.5 66C28.5 78 28 88 27.5 97C27 99.5 23 99.5 22.5 97C21.5 90 20.5 82 20 74C19 66 19 60 19.5 54C20 48 19.5 44 19 38C17.5 44 16.5 50 15 58C14.5 60 14 62 12.5 62.5C10.5 63 9 61 9.5 58C11 50 12 42 13 34C13.5 30 15 27 19 25.5C22 24.5 26 24 26.5 22C27 20 28 19 30 19Z"/></clipPath>
+            <filter id="fig-soft" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.5"/></filter>
+            <ellipse id="zone-back" cx="30" cy="46" rx="11" ry="17"/>
+            <ellipse id="zone-shoulders" cx="30" cy="26" rx="18" ry="7"/>
+            <g id="zone-arms"><ellipse cx="46" cy="44" rx="6" ry="20"/><ellipse cx="14" cy="44" rx="6" ry="20"/></g>
+            <ellipse id="zone-legs" cx="30" cy="84" rx="14" ry="19"/>
+            <ellipse id="zone-head" cx="30" cy="10" rx="10" ry="11"/>
+            <rect id="zone-all" width="60" height="104"/>
+          </defs>
+        </svg>
+
         <ul class="cards" role="list">
           <li class="card" data-reveal>
+            <span class="figure-badge"><svg class="figure" aria-hidden="true" focusable="false" viewBox="0 0 60 104">
+              <use href="#fig-body"/>
+              <g class="hl" clip-path="url(#fig-clip)"><g filter="url(#fig-soft)"><use href="#zone-back"/></g></g>
+            </svg></span>
             <h3>Nugaros masažas</h3>
             <p>Atpalaiduoja nugaros raumenis, mažina juosmens ir tarpumentės skausmus, gerina laikyseną.</p>
           </li>
           <li class="card" data-reveal>
+            <span class="figure-badge"><svg class="figure" aria-hidden="true" focusable="false" viewBox="0 0 60 104">
+              <use href="#fig-body"/>
+              <g class="hl" clip-path="url(#fig-clip)"><g filter="url(#fig-soft)"><use href="#zone-shoulders"/></g></g>
+            </svg></span>
             <h3>Pečių ir kaklo masažas</h3>
             <p>Padeda, kai kaklas „sustingęs“ nuo darbo prie kompiuterio, skauda galvą ar sunku pasukti galvą.</p>
           </li>
           <li class="card" data-reveal>
+            <span class="figure-badge"><svg class="figure" aria-hidden="true" focusable="false" viewBox="0 0 60 104">
+              <use href="#fig-body"/>
+              <g class="hl" clip-path="url(#fig-clip)"><g filter="url(#fig-soft)"><use href="#zone-arms"/></g></g>
+            </svg></span>
             <h3>Rankų masažas</h3>
             <p>Mažina dilbių ir plaštakų įtampą, tinka dirbantiems rankomis, prie klaviatūros ar sportuojantiems.</p>
           </li>
           <li class="card" data-reveal>
+            <span class="figure-badge"><svg class="figure" aria-hidden="true" focusable="false" viewBox="0 0 60 104">
+              <use href="#fig-body"/>
+              <g class="hl" clip-path="url(#fig-clip)"><g filter="url(#fig-soft)"><use href="#zone-legs"/></g></g>
+            </svg></span>
             <h3>Kojų masažas</h3>
             <p>Lengvina kojų nuovargį ir sunkumą, gerina kraujotaką po ilgo stovėjimo ar fizinio krūvio.</p>
           </li>
           <li class="card" data-reveal>
+            <span class="figure-badge"><svg class="figure" aria-hidden="true" focusable="false" viewBox="0 0 60 104">
+              <use href="#fig-body"/>
+              <g class="hl" clip-path="url(#fig-clip)"><g filter="url(#fig-soft)"><use href="#zone-head"/></g></g>
+            </svg></span>
             <h3>Galvos masažas</h3>
             <p>Ramina, padeda atsipalaiduoti, mažina įtampos sukeltus galvos skausmus.</p>
           </li>
           <li class="card" data-reveal>
+            <span class="figure-badge"><svg class="figure" aria-hidden="true" focusable="false" viewBox="0 0 60 104">
+              <use href="#fig-body"/>
+              <g class="hl" clip-path="url(#fig-clip)"><g filter="url(#fig-soft)"><use href="#zone-arms"/><use href="#zone-legs"/></g></g>
+            </svg></span>
             <h3>Sportinis masažas</h3>
             <p>Paruošia raumenis krūviui ir padeda greičiau atsigauti po treniruočių ar varžybų, mažina raumenų skausmą ir sustingimą.</p>
           </li>
           <li class="card card-wide" data-reveal>
-            <h3>Viso kūno masažas</h3>
-            <p>Ilgesnis masažas visam kūnui, kai norisi ir pailsėti, ir atsikratyti įtampos visur iš karto.</p>
+            <span class="figure-badge"><svg class="figure" aria-hidden="true" focusable="false" viewBox="0 0 60 104">
+              <use href="#fig-body"/>
+              <g class="hl" clip-path="url(#fig-clip)"><g filter="url(#fig-soft)"><use href="#zone-all"/></g></g>
+            </svg></span>
+            <div>
+              <h3>Viso kūno masažas</h3>
+              <p>Ilgesnis masažas visam kūnui, kai norisi ir pailsėti, ir atsikratyti įtampos visur iš karto.</p>
+            </div>
           </li>
         </ul>
       </div>
