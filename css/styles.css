@@ -59,11 +59,6 @@
   --accent: #0b4f47;
   --accent-hover: #083a34;
   --on-accent: #ffffff;
-  --fig: #cfe3dd;
-  --stone-1: #2f8f80;
-  --stone-2: #7cc4b5;
-  --stone-3: #cfe7df;
-  --leaf: rgb(124 196 181 / 0.45);
   --peach: #ffc9ae;
   --border: #cfe5de;
   --focus: #b3410e;
@@ -102,11 +97,6 @@
     --accent: #8fe0cf;
     --accent-hover: #b8efe3;
     --on-accent: #0b2420;
-    --fig: #3a524c;
-    --stone-1: #2f7a6d;
-    --stone-2: #5aa898;
-    --stone-3: #9cc9bd;
-    --leaf: rgb(143 224 207 / 0.25);
     --border: #2c423c;
     --focus: #ffb38a;
     --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 24px rgb(0 0 0 / 0.3);
@@ -310,17 +300,6 @@ main:focus { outline: none; }
 
 /* ===== Hero ===== */
 .hero { padding: 4rem 0 4.5rem; }
-.hero-art {
-  position: absolute;
-  z-index: -1;
-  width: 46rem;
-  max-width: none;
-  top: 50%;
-  right: -22rem;
-  transform: translateY(-50%);
-  opacity: 0.45;
-  pointer-events: none;
-}
 .hero h1 { margin-bottom: 0.3em; max-width: 12ch; }
 .motto {
   position: relative;
@@ -369,17 +348,6 @@ main:focus { outline: none; }
 .wave-bottom { padding-bottom: calc(4.5rem + var(--wave-h)); }
 #svarbu { --wave-top: var(--bg); }
 .contact { --wave-top: var(--bg-alt); --wave-bottom: var(--bg); }
-
-/* Akmenų iliustracija */
-.stones { display: block; width: min(15rem, 60%); margin: 1.5rem 0 0; }
-.stones .shadow { fill: var(--accent); opacity: 0.1; }
-.stones .st1 { fill: var(--stone-1); }
-.stones .st2 { fill: var(--stone-2); }
-.stones .st3 { fill: var(--stone-3); }
-.stones .st4, .stones .drop { fill: var(--peach); }
-.stones .hi { fill: none; stroke: #fff; stroke-opacity: 0.35; stroke-width: 2.5; stroke-linecap: round; }
-.stones .sprig { fill: var(--leaf); stroke: var(--accent); stroke-width: 1.5; }
-.stones .stem { fill: none; stroke-width: 2; }
 
 /* ===== Skiltys ===== */
 .section { padding: 4.5rem 0; }
@@ -436,32 +404,15 @@ main:focus { outline: none; }
 }
 .card h3 { margin-bottom: 0.4em; }
 .card p { margin: 0; color: var(--text-muted); }
-.figure-badge {
-  display: grid;
-  place-items: center;
-  width: 4.5rem; height: 4.5rem;
-  margin-bottom: 1.25rem;
-  border-radius: 50%;
-  background: var(--bg-alt);
-}
-.figure { width: 2.4rem; height: 3rem; fill: var(--fig); }
-.figure .hl { fill: var(--accent); }
 
 /* Viso kūno masažas – per visą eilutę, išskirtas */
 .card-wide {
   grid-column: 1 / -1;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 1rem 1.75rem;
   background: var(--band);
   border-color: var(--band);
   color: var(--on-band);
 }
-.card-wide > div { flex: 1 1 16rem; }
 .card-wide p { color: var(--on-band-muted); max-width: 40rem; }
-.card-wide .figure-badge { background: var(--band-badge); margin: 0; }
-.card-wide .figure .hl { fill: var(--highlight); }
 
 /* Kainos */
 .prices {
@@ -540,16 +491,6 @@ main:focus { outline: none; }
 
 /* ===== Kontaktai ===== */
 .contact { padding: calc(4.5rem + var(--wave-h)) 0; }
-.contact-art {
-  position: absolute;
-  z-index: -1;
-  width: 50rem;
-  max-width: none;
-  left: -26rem;
-  bottom: -20rem;
-  opacity: 0.3;
-  pointer-events: none;
-}
 .contact-inner { text-align: center; }
 .contact h2 { margin-bottom: 0.4em; }
 .contact-big {
@@ -606,7 +547,6 @@ main:focus { outline: none; }
   .hero-inner > :nth-child(3) { animation-delay: 0.16s; }
   .hero-inner > :nth-child(4) { animation-delay: 0.24s; }
   .hero-inner > :nth-child(5) { animation-delay: 0.32s; }
-  .hero-art { animation: drift 40s ease-in-out infinite alternate; }
 
   .card:hover { transform: translateY(-4px); }
   .button:hover { transform: translateY(-1px); }
@@ -627,10 +567,6 @@ main:focus { outline: none; }
   from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: none; }
 }
-@keyframes drift {
-  from { transform: translateY(-50%) rotate(0deg); }
-  to { transform: translateY(-50%) rotate(8deg); }
-}
 
 /* ===== Platesni ekranai ===== */
 @media (min-width: 48rem) {
@@ -639,12 +575,10 @@ main:focus { outline: none; }
   .call-bar { display: none; }
   .header-phone { display: inline-flex; }
   .hero { padding: 7rem 0 6rem; }
-  .hero-art { width: 52rem; right: -14rem; opacity: 0.55; }
   .section { padding: 6rem 0; }
   .wave-top { padding-top: calc(6rem + var(--wave-h)); }
   .wave-bottom { padding-bottom: calc(6rem + var(--wave-h)); }
   .hero.wave-bottom { padding-bottom: calc(6rem + var(--wave-h)); }
-  .stones { width: min(18rem, 80%); margin-top: 2.5rem; }
   .about { grid-template-columns: 1fr 1.4fr; }
   .features { grid-column: 1 / -1; }
   .prep { grid-template-columns: 1.2fr 1fr; }
@@ -663,6 +597,5 @@ main:focus { outline: none; }
 /* Windows didelio kontrasto režimas */
 @media (forced-colors: active) {
   .button { border: 2px solid ButtonText; }
-  .figure .hl { fill: Highlight; }
-  .hero-art, .contact-art, .wave-top::before, .wave-bottom::after { display: none; }
+  .wave-top::before, .wave-bottom::after { display: none; }
 }
