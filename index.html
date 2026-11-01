@@ -72,6 +72,7 @@
 
   <main id="turinys" tabindex="-1">
     <section class="hero wave-bottom" aria-labelledby="hero-title">
+      <img class="hero-photo" src="img/peciai-1600.webp" srcset="img/peciai-800.webp 800w, img/peciai-1600.webp 1600w" sizes="(min-width: 64rem) 1000px, 100vw" width="1600" height="800" fetchpriority="high" alt="Masažuotojo rankos ant kliento pečių.">
       <div class="container hero-inner">
         <p class="eyebrow">Gydomasis ir sportinis masažas · Kaunas, Eiguliai</p>
         <h1 id="hero-title">Masažuotojas Giedrius</h1>
@@ -96,6 +97,7 @@
         <div class="about-head" data-reveal>
           <p class="eyebrow eyebrow-dark">Apie</p>
           <h2 id="apie-title">Ko nemato akys, jaučia mano rankos</h2>
+          <img class="photo about-photo" src="img/rankslosciai-900.webp" width="900" height="675" loading="lazy" alt="Sulankstyti rankšluosčiai ir aliejaus buteliukas ant masažo stalo.">
         </div>
         <div class="about-body" data-reveal>
           <!-- TODO: patikslinti tekstą su Giedriumi (patirtis, išsilavinimas, sertifikatai) -->
@@ -122,10 +124,13 @@
 
     <section id="masazai" class="section section-alt wave-top wave-bottom" aria-labelledby="masazai-title">
       <div class="container">
-        <div class="section-head" data-reveal>
-          <p class="eyebrow eyebrow-dark">Paslaugos</p>
-          <h2 id="masazai-title">Masažai</h2>
-          <p class="section-intro">Masažą galima rinktis pagal vieną kūno sritį arba derinti kelias.</p>
+        <div class="split">
+          <div class="section-head" data-reveal>
+            <p class="eyebrow eyebrow-dark">Paslaugos</p>
+            <h2 id="masazai-title">Masažai</h2>
+            <p class="section-intro">Masažą galima rinktis pagal vieną kūno sritį arba derinti kelias.</p>
+          </div>
+          <img class="photo" data-reveal src="img/rankos-900.webp" width="900" height="600" loading="lazy" alt="Masažuojama kliento ranka ant masažo stalo.">
         </div>
 
         <!-- Bendras kūno siluetas ikonėlėms. Švelnus švytėjimas rodo masažuojamą sritį. -->
@@ -208,23 +213,28 @@
 
     <section id="kainos" class="section" aria-labelledby="kainos-title">
       <div class="container">
-        <div class="section-head" data-reveal>
-          <p class="eyebrow eyebrow-dark">Kiek kainuoja</p>
-          <h2 id="kainos-title">Kainos</h2>
-          <p class="section-intro">Kaina priklauso tik nuo trukmės, ne nuo masažo rūšies.</p>
+        <div class="split split-prices">
+          <div>
+            <div class="section-head" data-reveal>
+              <p class="eyebrow eyebrow-dark">Kiek kainuoja</p>
+              <h2 id="kainos-title">Kainos</h2>
+              <p class="section-intro">Kaina priklauso tik nuo trukmės, ne nuo masažo rūšies.</p>
+            </div>
+            <ul class="prices" role="list">
+              <li class="price" data-reveal>
+                <h3 class="price-time">30 minučių</h3>
+                <p class="price-sum">20 €</p>
+                <p class="price-note">Tinka vienai sričiai, pavyzdžiui, nugarai ar pečiams ir kaklui.</p>
+              </li>
+              <li class="price" data-reveal>
+                <h3 class="price-time">60 minučių</h3>
+                <p class="price-sum">40 €</p>
+                <p class="price-note">Tinka kelioms sritims arba viso kūno masažui.</p>
+              </li>
+            </ul>
+          </div>
+          <img class="photo" data-reveal src="img/kojos-900.webp" width="900" height="675" loading="lazy" alt="Masažuojama kliento blauzda.">
         </div>
-        <ul class="prices" role="list">
-          <li class="price" data-reveal>
-            <h3 class="price-time">30 minučių</h3>
-            <p class="price-sum">20 €</p>
-            <p class="price-note">Tinka vienai sričiai, pavyzdžiui, nugarai ar pečiams ir kaklui.</p>
-          </li>
-          <li class="price" data-reveal>
-            <h3 class="price-time">60 minučių</h3>
-            <p class="price-sum">40 €</p>
-            <p class="price-note">Tinka kelioms sritims arba viso kūno masažui.</p>
-          </li>
-        </ul>
       </div>
     </section>
 

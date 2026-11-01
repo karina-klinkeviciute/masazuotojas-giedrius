@@ -342,6 +342,17 @@ main:focus { outline: none; }
 .motto::before { content: "„"; }
 .motto::after { content: "“"; }
 
+.hero-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+  object-position: right center;
+  margin-top: -4rem;
+  margin-bottom: 2.5rem;
+}
+
 .cta { display: flex; flex-wrap: wrap; gap: 1rem; }
 
 .hero-facts {
@@ -403,6 +414,20 @@ main:focus { outline: none; }
 }
 .features h3 { font-size: 1.25rem; margin-bottom: 0.35em; }
 .features p { margin: 0; color: var(--text-muted); }
+
+/* Nuotraukos */
+.photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.about-photo { margin-top: 2rem; }
+.split { display: grid; gap: 2rem 3rem; align-items: center; margin-bottom: 2.5rem; }
+.split .section-head { margin-bottom: 0; }
+.split-prices { margin-bottom: 0; }
+.split-prices .section-head { margin-bottom: 2.5rem; }
 
 /* Masažai */
 .cards {
@@ -611,6 +636,24 @@ main:focus { outline: none; }
   .prep { grid-template-columns: 1.2fr 1fr; }
   .contact { padding: calc(6rem + var(--wave-h)) 0; }
   .contact-list { grid-template-columns: repeat(3, 1fr); }
+  .split { grid-template-columns: 1fr 1fr; }
+  .split-prices { grid-template-columns: 1.3fr 1fr; }
+}
+
+/* Plačiame ekrane nuotrauka viršuje – dešinėje, šalia teksto */
+@media (min-width: 64rem) {
+  .hero-photo {
+    position: absolute;
+    top: calc(50% - var(--wave-h) / 2);
+    right: max(var(--gutter), calc((100vw - var(--max)) / 2 + var(--gutter)));
+    width: min(38vw, 32rem);
+    aspect-ratio: 4 / 3;
+    margin: 0;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transform: translateY(-50%);
+  }
+  .hero-facts { max-width: 34rem; }
 }
 
 /* Siauresni ekranai: navigacija po pavadinimu */
