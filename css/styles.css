@@ -220,7 +220,7 @@ main { display: grid; gap: var(--gap); }
   border-radius: 999px 999px calc(var(--radius) - 8px) calc(var(--radius) - 8px);
 }
 
-.split-prices .arch { aspect-ratio: 1 / 1; object-position: 55% center; }
+.split-prices .arch { aspect-ratio: 1 / 1; object-position: 70% center; }
 .sketch {
   display: block; width: 100%; max-width: 34rem; height: auto; margin: 0 auto;
   mix-blend-mode: multiply;
