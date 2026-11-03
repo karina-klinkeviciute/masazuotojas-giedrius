@@ -419,7 +419,7 @@ main { display: grid; gap: var(--gap); }
 .price-sum { font-size: 1.6rem; font-weight: 700; margin: 0; }
 
 /* ===== Prieš atvykstant ===== */
-.steps { list-style: none; counter-reset: step; margin: 1.5rem 0 0; padding: 0; }
+.steps { list-style: none; counter-reset: step; margin: 1.5rem 0 2rem; padding: 0; }
 .steps li {
   counter-increment: step;
   position: relative;
@@ -446,6 +446,21 @@ main { display: grid; gap: var(--gap); }
 }
 .note p { color: var(--text-muted); }
 .note p:last-child { margin: 0; }
+
+/* Piešinys baltu fonu – šviesiame režime susilieja su persikine plokšte */
+.sketch {
+  display: block;
+  width: 100%;
+  max-width: 34rem;
+  height: auto;
+  margin: 0 auto;
+  mix-blend-mode: multiply;
+  -webkit-mask-image: radial-gradient(ellipse 50% 50% at center, #000 75%, transparent 100%);
+  mask-image: radial-gradient(ellipse 50% 50% at center, #000 75%, transparent 100%);
+}
+@media (prefers-color-scheme: dark) {
+  .sketch { mix-blend-mode: normal; border-radius: calc(var(--radius) - 8px); -webkit-mask-image: none; mask-image: none; }
+}
 
 /* ===== Kontaktai ===== */
 .contact-big {
