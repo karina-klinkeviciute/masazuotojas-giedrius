@@ -221,6 +221,15 @@ main { display: grid; gap: var(--gap); }
 }
 
 .split-prices .arch { aspect-ratio: 1 / 1; }
+.sketch {
+  display: block; width: 100%; max-width: 34rem; height: auto; margin: 0 auto;
+  mix-blend-mode: multiply;
+  -webkit-mask-image: radial-gradient(ellipse 50% 50% at center, #000 75%, transparent 100%);
+  mask-image: radial-gradient(ellipse 50% 50% at center, #000 75%, transparent 100%);
+}
+@media (prefers-color-scheme: dark) {
+  .sketch { mix-blend-mode: normal; border-radius: calc(var(--radius) - 8px); -webkit-mask-image: none; mask-image: none; }
+}
 .split-services .video-wrap { max-width: 26rem; justify-self: end; width: 100%; }
 
 /* Piešta animacija su sustabdymo mygtuku */
