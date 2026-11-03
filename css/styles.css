@@ -35,23 +35,23 @@
 /* ===== Spalvos ir dydžiai =====
    Visos teksto/fono poros atitinka WCAG AAA (≥ 7:1) kontrastą. */
 :root {
-  --page: #dbe8f1;
+  --page: #e3e6d3;
   --panel: #ffffff;
   --panel-peach: #fff1e8;
-  --panel-soft: #eef5fa;
-  --text: #13303f;
-  --text-muted: #2f4a5a;
-  --line: #d3e1ea;
-  --dark: #173a4f;
+  --panel-soft: #f1f3e6;
+  --text: #28301f;
+  --text-muted: #3e4731;
+  --line: #dde1cc;
+  --dark: #3f4a2c;
   --on-dark: #ffffff;
-  --on-dark-muted: #d3e3ee;
+  --on-dark-muted: #e3e6d3;
   --coral: #f6b29f;
   --coral-hover: #f9c6b7;
-  --on-coral: #13303f;
+  --on-coral: #28301f;
   --coral-deco: #e8806a;
-  --hero-a: #cfe3f0;
+  --hero-a: #e1e7cc;
   --hero-b: #fde3d6;
-  --fig: #d7e4ee;
+  --fig: #dfe3cd;
   --fig-hl: #e0795f;
   --focus: #b3410e;
   --focus-light: #ffd27a;
@@ -67,17 +67,17 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --page: #111a21;
-    --panel: #1b2730;
-    --panel-peach: #2a2426;
-    --panel-soft: #22313c;
-    --text: #edf5f9;
-    --text-muted: #c5d6e0;
-    --line: #2f4250;
-    --dark: #20384a;
-    --hero-a: #1a3240;
-    --hero-b: #2e2a2a;
-    --fig: #34495a;
+    --page: #161812;
+    --panel: #20231b;
+    --panel-peach: #2a2422;
+    --panel-soft: #2a2e23;
+    --text: #f1f3ea;
+    --text-muted: #d0d5c2;
+    --line: #363b2d;
+    --dark: #34402a;
+    --hero-a: #2a3220;
+    --hero-b: #2e2a26;
+    --fig: #3e4534;
     --fig-hl: #f6b29f;
     --focus: #ffb38a;
   }
