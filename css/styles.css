@@ -222,6 +222,34 @@ main { display: grid; gap: var(--gap); }
 
 .split-prices .arch { aspect-ratio: 1 / 1; }
 
+/* Piešta animacija su sustabdymo mygtuku */
+.video-wrap { position: relative; margin: 0; }
+.video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: calc(var(--radius) - 8px);
+  background: #fbf8f2;
+}
+.video-toggle {
+  position: absolute;
+  right: 0.75rem; bottom: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 2.75rem;
+  padding: 0.45rem 1rem;
+  border: 0;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.92);
+  color: #28301f;
+  font: 600 0.95rem var(--sans);
+  cursor: pointer;
+}
+.video-toggle:hover { background: #fff; }
+.video-toggle .icon-play, .video-toggle.is-paused .icon-pause { display: none; }
+.video-toggle.is-paused .icon-play { display: block; }
+
 /* ===== Mygtukai ===== */
 .button {
   display: inline-flex;

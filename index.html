@@ -131,7 +131,14 @@
             <h2 id="masazai-title">Masažai</h2>
             <p class="lead">Masažą galima rinktis pagal vieną kūno sritį arba derinti kelias.</p>
           </div>
-          <img class="photo" data-reveal src="img/rankos-900.webp" width="900" height="600" loading="lazy" alt="Masažuojama kliento ranka ant masažo stalo.">
+          <figure class="video-wrap" data-reveal>
+            <video class="video" src="img/rankos-masazas.mp4" poster="img/rankos-masazas.webp" width="720" height="544" muted loop playsinline preload="metadata" aria-label="Piešta animacija: masažuotojo rankos masažuoja kliento dilbį."></video>
+            <button class="video-toggle" type="button" hidden>
+              <svg class="icon icon-pause" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M8 5h3v14H8zm5 0h3v14h-3z"/></svg>
+              <svg class="icon icon-play" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              <span class="video-toggle-text">Sustabdyti animaciją</span>
+            </button>
+          </figure>
         </div>
 
         <!-- Bendras kūno siluetas ikonėlėms. Švelnus švytėjimas rodo masažuojamą sritį. -->
@@ -330,6 +337,30 @@
         });
       }, { rootMargin: "0px 0px -10% 0px" });
       document.querySelectorAll("[data-reveal]").forEach(function (el) { io.observe(el); });
+    })();
+
+    // Animacija sukasi ratu, bet ją galima sustabdyti. Su „mažiau judesio“ pati nepasileidžia.
+    (function () {
+      var video = document.querySelector(".video");
+      var button = document.querySelector(".video-toggle");
+      if (!video || !button) return;
+      var text = button.querySelector(".video-toggle-text");
+      function sync() {
+        var playing = !video.paused;
+        button.classList.toggle("is-paused", !playing);
+        text.textContent = playing ? "Sustabdyti animaciją" : "Paleisti animaciją";
+      }
+      button.hidden = false;
+      button.addEventListener("click", function () {
+        if (video.paused) video.play(); else video.pause();
+      });
+      video.addEventListener("play", sync);
+      video.addEventListener("pause", sync);
+      if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        var p = video.play();
+        if (p && p.catch) p.catch(sync);
+      }
+      sync();
     })();
   </script>
 </body>
