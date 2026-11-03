@@ -397,7 +397,10 @@ main { display: grid; gap: var(--gap); }
   margin-bottom: 1rem;
   border-radius: 50%;
   background: var(--panel);
-  color: var(--fig-hl);
+  color: var(--dark);
+}
+@media (prefers-color-scheme: dark) {
+  .feature-icon { color: var(--text-muted); }
 }
 .feature-icon svg { width: 2rem; height: 2rem; }
 
