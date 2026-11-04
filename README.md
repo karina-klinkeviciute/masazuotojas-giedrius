@@ -1,25 +1,29 @@
 # Masažuotojas Giedrius – svetainė
 
+https://masazuotojasgiedrius.lt/
+
 Statinis one-pager: `index.html` + `css/styles.css`, be jokio build žingsnio.
 Peržiūrai lokaliai užtenka atidaryti `index.html` naršyklėje.
 
-## Prieš paleidžiant
+## Dar liko (`TODO` faile `index.html`)
 
-`index.html` faile dar liko `TODO`:
 - tikslus adresas ir darbo laikas (kol kas „Kaunas, Eiguliai“ ir „Susitarus telefonu“),
-- sertifikatai / patirtis skiltyje „Apie Giedrių“,
-- nuotrauka dalinimuisi (`img/og.jpg`).
+- kur Giedrius mokėsi, kiek metų dirba; vėliau – portretas skiltyje „Apie“.
 
-## Publikavimas GitHub Pages
+## Publikavimas
 
-1. Sukurti **viešą** repozitoriją GitHub'e ir įkelti failus.
-2. *Settings → Pages → Build and deployment*: Source **Deploy from a branch**, branch `main`, folder `/ (root)`.
-3. Po minutės svetainė veiks adresu `https://<vartotojas>.github.io/<repo>/`.
+Kiekvienas `main` šakos atnaujinimas automatiškai publikuojamas per GitHub Actions
+(`.github/workflows/pages.yml`) į GitHub Pages. Į svetainę kopijuojami tik
+`index.html`, `CNAME`, `robots.txt`, `sitemap.xml`, `css/`, `fonts/`, `img/`.
+Aplankas `images/` (originalūs failai) į repozitoriją nekeliamas.
 
-### Savas domenas
+### Domenas
 
-1. *Settings → Pages → Custom domain*: įrašyti, pvz., `www.giedriausmasazai.lt` (GitHub sukurs `CNAME` failą).
-2. Pas domeno registratorių nustatyti DNS:
-   - `www` → **CNAME** → `<vartotojas>.github.io`
-   - šakninis domenas (`@`) → **A** įrašai: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-3. Kai DNS persiduos (iki kelių valandų), įjungti **Enforce HTTPS**.
+- `CNAME` faile – `masazuotojasgiedrius.lt`; *Settings → Pages*: tas pats domenas, **Enforce HTTPS** įjungta.
+- DNS (domenai.lt): `@` → **A** `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`;
+  `www` → **CNAME** `karina-klinkeviciute.github.io`.
+
+### SEO
+
+- Pakeitus turinį, atnaujinti `<lastmod>` faile `sitemap.xml`.
+- Domenas pridėtas į Google Search Console, ten pateiktas `https://masazuotojasgiedrius.lt/sitemap.xml`.
